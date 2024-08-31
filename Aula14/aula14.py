@@ -6,12 +6,8 @@ with open('posicional.txt', encoding='utf-8') as file:
 lista.pop(0)
 lista.pop(0)
 
-def limpar_dado(dado):
-    texto = ''
-    for i in dado:
-        texto += i
-        if i == " ":
-            return texto
+def limpar_dado(dado: str):
+    return dado.strip()
 
 def fazer_dic(lista):
     lista_dic = []
@@ -40,7 +36,7 @@ def fazer_dic(lista):
 lista_dic = fazer_dic(lista)
 
 with open('teste.json', mode='w') as file:
-    json.dump(lista_dic, file, ensure_ascii=False)
+    json.dump(lista_dic, file, indent=4, ensure_ascii=False)
 
 # print(lista[2][:31]) # nome
 # print(lista[2][31:62]) # sobrenome
